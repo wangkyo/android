@@ -1,0 +1,109 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:dividerPadding="6dp"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+<!--         <EditText -->
+<!--             android:id="@+id/sendText2" -->
+<!--             android:layout_width="140dp" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:layout_weight="0.95" -->
+<!--             android:text="F30A" > -->
+
+<!--             <requestFocus /> -->
+<!--         </EditText> -->
+
+        <Button
+            android:id="@+id/sendBtn2"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:onClick="sendBtn2"
+            android:text="关机" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+<!--         <EditText -->
+<!--             android:id="@+id/sendText3" -->
+<!--             android:layout_width="140dp" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:layout_weight="0.95" -->
+<!--             android:text="F302" > -->
+
+<!--             <requestFocus /> -->
+<!--         </EditText> -->
+
+        <Button
+            android:id="@+id/sendBtn3"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:onClick="sendBtn3"
+            android:text="开机" />
+    </LinearLayout>
+
+<!--     <LinearLayout -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="wrap_content" > -->
+
+<!--         <EditText -->
+<!--             android:id="@+id/sendText4" -->
+<!--             android:layout_width="140dp" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:layout_weight="0.95" -->
+<!--             android:text="F30B" > -->
+
+<!--             <requestFocus /> -->
+<!--         </EditText> -->
+
+<!--         <Button -->
+<!--             android:id="@+id/sendBtn4" -->
+<!--             style="?android:attr/buttonStyleSmall" -->
+<!--             android:layout_width="72dp" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:onClick="sendBtn4" -->
+<!--             android:text="SEND" /> -->
+<!--     </LinearLayout> -->
+
+<!--     <LinearLayout -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="wrap_content" > -->
+
+<!--         <EditText -->
+<!--             android:id="@+id/sendText5" -->
+<!--             android:layout_width="140dp" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:layout_weight="0.95" -->
+<!--             android:text="F301" > -->
+
+<!--             <requestFocus /> -->
+<!--         </EditText> -->
+
+<!--         <Button -->
+<!--             android:id="@+id/sendBtn5" -->
+<!--             style="?android:attr/buttonStyleSmall" -->
+<!--             android:layout_width="72dp" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:onClick="sendBtn5" -->
+<!--             android:text="SEND" /> -->
+<!--     </LinearLayout> -->
+
+    <TextView
+        android:id="@+id/textViewValues"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:scrollbars="vertical"
+        android:singleLine="false"
+        android:text="receive values text view.."
+        android:textSize="18sp" />
+
+</LinearLayout>

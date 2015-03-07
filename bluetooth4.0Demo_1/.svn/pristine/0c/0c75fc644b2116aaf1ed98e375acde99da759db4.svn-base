@@ -1,0 +1,118 @@
+package com.example.mybletestdemo;
+
+import java.util.List;
+
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothGatt;
+import android.bluetooth.BluetoothGattCharacteristic;
+import android.bluetooth.BluetoothGattService;
+import android.util.Log;
+
+import com.haier.generaldeviceadapter.I.IAlarmDescription;
+import com.haier.generaldeviceadapter.I.IAttributeDescription;
+import com.haier.generaldeviceadapter.I.IDevice;
+
+public class Device implements IDevice{
+
+	private BluetoothDevice mBluetoothDevice;
+	private BluetoothGatt myBluetoothGatt;
+	private BluetoothGattService myGattService;
+	private BluetoothGattCharacteristic readGattCharacteristic;
+	private BluetoothGattCharacteristic writeGattCharacteristic;
+	
+	public Device(BluetoothDevice bluetoothDevice){
+		mBluetoothDevice = bluetoothDevice;
+	}
+	
+	
+//	public BluetoothGatt getMyBluetoothGatt() {
+//		return myBluetoothGatt;
+//	}
+	public void setMyBluetoothGatt(BluetoothGatt myBluetoothGatt) {
+		this.myBluetoothGatt = myBluetoothGatt;
+	}
+	public BluetoothGattService getMyGattService() {
+		return myGattService;
+	}
+	public void setMyGattService(BluetoothGattService myGattService) {
+		this.myGattService = myGattService;
+	}
+	public BluetoothGattCharacteristic getReadGattCharacteristic() {
+		return readGattCharacteristic;
+	}
+	public void setReadGattCharacteristic(
+			BluetoothGattCharacteristic readGattCharacteristic) {
+		this.readGattCharacteristic = readGattCharacteristic;
+	}
+	public BluetoothGattCharacteristic getWriteGattCharacteristic() {
+		return writeGattCharacteristic;
+	}
+	public void setWriteGattCharacteristic(
+			BluetoothGattCharacteristic writeGattCharacteristic) {
+		this.writeGattCharacteristic = writeGattCharacteristic;
+	}
+	@Override
+	public String getIdentifier() {
+		// TODO Auto-generated method stub
+		return mBluetoothDevice.getAddress();
+	}
+
+	@Override
+	public String getProductTypeId() {
+		// TODO Auto-generated method stub
+		return mBluetoothDevice.getType()+"";
+	}
+
+	@Override
+	public int getState() {
+		// TODO Auto-generated method stub
+		return mBluetoothDevice.getBondState();
+	}
+
+	@Override
+	public String getManufacturerTypeId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<IAttributeDescription> getAttributeList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<IAlarmDescription> getAlarmList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getAttributeValue(IAttributeDescription attrubite) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int setAttribute(IAttributeDescription attrubite) {
+		// TODO Auto-generated method stub
+		Log.d("star", "setAttribute");
+		if (writeGattCharacteristic!=null &&myBluetoothGatt!=null) {
+			DataConversionUtil dcUtil = DataConversionUtil.getInstance();
+			Log.d("star", "attrubite : "+dcUtil.dataConversion(attrubite));
+			writeGattCharacteristic.setValue(dcUtil.dataConversion(attrubite));
+			myBluetoothGatt.writeCharacteristic(writeGattCharacteristic);
+		} else {
+			return -1;
+		}
+		return 0;
+	}
+
+
+	@Override
+	public Object getBluetoothDevice() {
+		// TODO Auto-generated method stub
+		return mBluetoothDevice;
+	}
+
+}

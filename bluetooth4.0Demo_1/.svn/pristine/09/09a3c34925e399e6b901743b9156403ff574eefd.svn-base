@@ -1,0 +1,37 @@
+package com.example.mybletestdemo;
+
+import com.haier.generaldeviceadapter.I.IAttributeDescription;
+
+public class DeviceAttribute implements IAttributeDescription{
+
+	private String name;
+	
+	public DeviceAttribute(String name){
+		this.name = name;
+	}
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return name;
+	}
+
+	@Override
+	public String getValue() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String setName(String name) {
+		// TODO Auto-generated method stub
+		return name;
+	}
+
+	@Override
+	public String setValue(String value) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+}
